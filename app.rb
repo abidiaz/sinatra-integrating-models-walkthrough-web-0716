@@ -8,9 +8,12 @@ get '/' do
 end
 
 post '/' do
-  text_from_user = params[:user_text]
+  @analyzed_text = TextAnalyzer.new(params[:user_text])
   erb :results
 end
 
 
 end
+
+# get '/' do, which renders the index.erb page.
+# post '/results' do, which receives the form data through params and renders the results page.
